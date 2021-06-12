@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Betapdoc</string>
+    <string name="app_name">Bé tập đọc</string>
+    <string name="text_ImgBtn"></string>
+
 </resources>

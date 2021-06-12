@@ -6,10 +6,78 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/img_main_activity">
-
-    <ImageView
+    <LinearLayout
+        android:layout_marginTop="400dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="374dp"
-        android:src="@drawable/img_tittle_main" />
-
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+        <ImageButton
+            android:id="@+id/btn_hocchucai"
+            android:layout_weight="1"
+            android:src="@drawable/btn_hocchucai"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/text_ImgBtn"
+            android:layout_marginRight="3dp"/>
+        <ImageButton
+            android:id="@+id/btn_hocso"
+            android:layout_weight="1"
+            android:src="@drawable/btn_hocso"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/text_ImgBtn" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+        <ImageButton
+            android:id="@+id/btn_hocamvan"
+            android:layout_weight="1"
+            android:src="@drawable/btn_hocamvan"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/text_ImgBtn"
+            android:layout_marginRight="3dp"/>
+        <ImageButton
+            android:id="@+id/btn_ghepvan"
+            android:layout_weight="1"
+            android:src="@drawable/btn_ghepvan"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/text_ImgBtn" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+        <ImageButton
+            android:id="@+id/btn_luyentapchucai"
+            android:layout_weight="1"
+            android:src="@drawable/btn_luyentapchucai"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/text_ImgBtn"
+            android:layout_marginRight="3dp"/>
+        <ImageButton
+            android:id="@+id/btn_luyentapchuso"
+            android:layout_weight="1"
+            android:src="@drawable/btn_luyentapchuso"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/text_ImgBtn" />
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btn_luyentapghepvan"
+        android:layout_gravity="center"
+        android:src="@drawable/btn_luyentapghepvan"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/text_ImgBtn" />
 </LinearLayout>
