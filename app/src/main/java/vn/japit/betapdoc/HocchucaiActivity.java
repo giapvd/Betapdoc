@@ -8,12 +8,17 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import vn.japit.betapdoc.SoundControl.SoundMaster;
+
 public class HocchucaiActivity extends AppCompatActivity {
     private Button btn_back;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hocchucai);
+
+        SoundMaster soundMaster = new SoundMaster(this,R.raw.sound_help);
+        soundMaster.playSound();
         btn_back = (Button) findViewById(R.id.btn_back);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
