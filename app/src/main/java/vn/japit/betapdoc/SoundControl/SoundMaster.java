@@ -1,65 +1,34 @@
 package vn.japit.betapdoc.SoundControl;
 
+
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.os.Build;
 
-import static android.content.Context.AUDIO_SERVICE;
+import java.util.HashMap;
 
 public class SoundMaster {
 
-    private boolean playing = false;
-    private boolean loaded = false;
-    private boolean playingCalled = false;
-    private float actualVolume;
-    private float maxVolume;
-    private float volume;
-    private AudioManager audioManager;
-    private SoundPool soundPool;
-    private int soundId;
-    private int ringingStreamId;
-    private int rawid;
+    private SoundPool mSoundPool;
+    private HashMap<Integer,Integer> mSoundPoolMap;
+    private AudioManager mAudioManager;
+    private Context mContext;
 
-    public SoundMaster(Context context, int sposition) {
-        // AudioManager audio settings for adjusting the volume
-        // AudioManager audio settings for adjusting the volume
-        audioManager = (AudioManager) context.getSystemService(AUDIO_SERVICE);
-        actualVolume = (float) audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        maxVolume = (float) audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-        volume = actualVolume / maxVolume;
-        this.rawid =sposition;
-        // Load the sounds
-        int maxStreams = 1;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            soundPool = new SoundPool.Builder()
-                    .setMaxStreams(maxStreams)
-                    .build();
-        } else {
-            soundPool = new SoundPool(maxStreams, AudioManager.STREAM_MUSIC, 0);
-        }
-
-        soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
-            @Override
-            public void onLoadComplete(SoundPool soundPool, int sampleId, int status) {
-                loaded = true;
-                if (playingCalled) {
-                    playRinging();
-                    playingCalled = false;
-                }
-            }
-
-        });
-        soundId = soundPool.load(context, rawid, 1);
+    public SoundMaster() {
 
     }
-    public void playRinging() {
-        if (loaded && !playing) {
-            ringingStreamId = soundPool.play(soundId, volume, volume, 1, -1, 1f);
-            playing = true;
-        } else {
-            playingCalled = true;
-        }
+    public void initSounds(Context context)
+    {
+        mContext = context;
+        mSoundPool = new SoundPool(4, AudioManager.STREAM_MUSIC,0);
+        mSoundPoolMap = new HashMap<Integer,Integer>();
+        mAudioManager = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
     }
-
+    public void addSound(int index, int soundId){
+        mSoundPoolMap.put(index,mSoundPool.load(mContext,soundId,1));
+    }
+    public void playSound(int index){
+        int streamVoume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+        mSoundPool.play(mSoundPoolMap.get(index),streamVoume,streamVoume,1,0,1f);
+    }
 }
