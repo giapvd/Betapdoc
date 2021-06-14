@@ -1,6 +1,5 @@
 package vn.japit.betapdoc.SoundControl;
 
-
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;
