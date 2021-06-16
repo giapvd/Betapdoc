@@ -47,6 +47,11 @@ public class HocchucaiActivity extends AppCompatActivity {
     private ImageButton btn_char_v;
     private ImageButton btn_char_x;
     private ImageButton btn_char_y;
+    private ImageButton btn_dau_sac;
+    private ImageButton btn_dau_huyen;
+    private ImageButton btn_dau_hoi;
+    private ImageButton btn_dau_nga;
+    private ImageButton btn_dau_nang;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -308,6 +313,45 @@ public class HocchucaiActivity extends AppCompatActivity {
             }
         });
 
+        btn_dau_sac = (ImageButton) findViewById(R.id.btn_dau_sac);
+        btn_dau_sac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                soundMaster.playSound(30);
+            }
+        });
+
+        btn_dau_huyen = (ImageButton) findViewById(R.id.btn_dau_huyen);
+        btn_dau_huyen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                soundMaster.playSound(31);
+            }
+        });
+
+        btn_dau_hoi = (ImageButton) findViewById(R.id.btn_dau_hoi);
+        btn_dau_hoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                soundMaster.playSound(32);
+            }
+        });
+
+        btn_dau_nga = (ImageButton) findViewById(R.id.btn_dau_nga);
+        btn_dau_nga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                soundMaster.playSound(33);
+            }
+        });
+
+        btn_dau_nang = (ImageButton) findViewById(R.id.btn_dau_nang);
+        btn_dau_nang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                soundMaster.playSound(34);
+            }
+        });
     }
     private void doScrollUp() {
          this.scrollView.scrollTo(0,0);
@@ -372,5 +416,15 @@ public class HocchucaiActivity extends AppCompatActivity {
         soundMaster.addSound(28,R.raw.char_x);
         //Add char y
         soundMaster.addSound(29,R.raw.char_y);
+        //Add char sắc
+        soundMaster.addSound(30,R.raw.char_dau_sac);
+        //Add char huyền
+        soundMaster.addSound(31,R.raw.char_dau_huyen);
+        //Add char hỏi
+        soundMaster.addSound(32,R.raw.char_dau_hoi);
+        //Add char ngã
+        soundMaster.addSound(33,R.raw.char_dau_nga);
+        //Add char nặng
+        soundMaster.addSound(34,R.raw.char_dau_nang);
     }
 }

@@ -12,23 +12,16 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
     private ImageButton btn_hocchucai;
-    private ImageButton btn_hocso;
+    private ImageButton btn_hocchughep;
     private ImageButton btn_hocamvan;
-    private ImageButton btn_ghepvan;
-    private ImageButton btn_luyentapchucai;
-    private ImageButton btn_luyentapchuso;
-    private ImageButton btn_luyentapghepvan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btn_hocchucai = (ImageButton) findViewById(R.id.btn_hocchucai);
-        btn_hocso = (ImageButton) findViewById(R.id.btn_hocso);
+        btn_hocchughep = (ImageButton) findViewById(R.id.btn_hocchughep);
         btn_hocamvan = (ImageButton) findViewById(R.id.btn_hocamvan);
-        btn_ghepvan = (ImageButton) findViewById(R.id.btn_ghepvan);
-        btn_luyentapchucai = (ImageButton) findViewById(R.id.btn_luyentapchucai);
-        btn_luyentapchuso = (ImageButton) findViewById(R.id.btn_luyentapchuso);
-        btn_luyentapghepvan = (ImageButton) findViewById(R.id.btn_luyentapghepvan);
 
         btn_hocchucai.setOnClickListener(new View.OnClickListener() {
             @Override
